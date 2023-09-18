@@ -35,4 +35,42 @@ Each of these questions is tackled using Python programming and Pandas data mani
 </span>
 
 
+<span style="font-family:Times New Roman; font-size:15pt;">
+<h4><b>3. Data Transformation and Code Structure<b></h4>
+<span>
+<span style="font-family: Times New Roman; font-size: 13pt;">
+
+The provided dataset underwent certain transformations to meet the project's specific requirements. These transformations were facilitated by the "timecalc" module, which was custom-designed for this purpose. This module adds several essential columns to the primary data, including month, year, day, week, time of ticket purchase, flight time, and the duration between purchase and flight. Additionally, the module undertakes the conversion of Gregorian calendar months to their corresponding solar calendar counterparts.
+
+The project's codebase is organized into various modules, ensuring flexibility and ease of use. If anyone wishes to analyze their own dataset following the structure of this project, they can effortlessly do so by invoking these modular functions. This approach allows for seamless integration of the provided code with diverse datasets, ensuring that updates to the dataset will not disrupt the analysis process.
+
+* timecalc module: This module leverages the datetime library and Pandas to create specialized columns in the data. Functions include:
+  - `Sharhighharbi(data)`: Converts Gregorian months and days to the solar calendar, influencing subsequent functions.
+  - `Rooz(data)`: Adds a column for the solar day of the week corresponding to the purchase date.
+  - `Mah(data)`: Incorporates a column for solar months based on the purchase date.
+  - `Sal(data)`: Adds a column indicating the solar year of the purchase.
+  - `Time(data)`: Appends the exact time of ticket purchase to the data.
+  - `Departure_time(data)`: Adds a column containing the exact time of the flight.
+  - `Timedelta(data)`: Incorporates a column indicating the time interval between purchase and flight.
+
+* Customers module: This module employs Pandas to define five functions. Notably:
+  - `pointset(data)`: Assigns points to passengers based on purchase amounts within predefined ranges, determined by the user.
+  - `Pointkolli(data)`: Provides overall points to each customer irrespective of the airline.
+  - `Pointwithcompanydevide(data)`: Assigns points to customers of each airline based on average and quartiles of sales.
+  - `Percentset(data)`: Sets the maximum discount a company can offer, typically at 10 percent.
+  - `Offpercentwithcompanydevide(data)`: Calculates discounts for each company based on purchase statistics and time difference between ticket purchase and flight.
+
+* Timeanalysis module: This module comprises 15 functions, offering insights into purchases and sales across various time periods. Functions include:
+  - `monthpersianbyusercount(data)`: Provides the number of purchased tickets in each solar month.
+  - Other functions offer metrics like the number of purchases per day of the week, month, hour, and night, as well as average purchase prices and total purchases by these time frames, along with the average difference between the flight and purchase date.
+
+* Commute module: This module contains 8 functions primarily focused on origin, destination, and their relationship. Notable functions include:
+  - `find_routes(data)`: Identifies popular routes and origins/destinations on a monthly and overall basis.
+  - Two additional functions explore city migration rates based on origin and destination degrees.
+
+* Companies module: With 10 functions, this module extracts extensive information about company income and popularity, self-explanatory by their function names.
+
+This structured and modular approach to code design ensures that analysis tasks can be conducted efficiently, with results presented in a clear and organized manner.
+
+</span>
 
